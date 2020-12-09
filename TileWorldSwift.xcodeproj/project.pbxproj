@@ -16,6 +16,13 @@
 		8013DD56257EBC5400110784 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8013DD54257EBC5400110784 /* Main.storyboard */; };
 		8013DD62257EBC5500110784 /* TileWorldSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8013DD61257EBC5500110784 /* TileWorldSwiftTests.swift */; };
 		8013DD6D257EBC5500110784 /* TileWorldSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8013DD6C257EBC5500110784 /* TileWorldSwiftUITests.swift */; };
+		8013DD7E257EBCDD00110784 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8013DD7D257EBCDD00110784 /* Grid.swift */; };
+		8013DD83257EBE5100110784 /* GridObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8013DD82257EBE5100110784 /* GridObject.swift */; };
+		8013DD88257EBE7F00110784 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8013DD87257EBE7F00110784 /* Location.swift */; };
+		8013DD8D257EBEB300110784 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8013DD8C257EBEB300110784 /* Agent.swift */; };
+		8013DD92257EBF0B00110784 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8013DD91257EBF0B00110784 /* Tile.swift */; };
+		8013DD97257EBF4700110784 /* Hole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8013DD96257EBF4700110784 /* Hole.swift */; };
+		80ACF546257EC2B6000B49DA /* Obstacle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ACF545257EC2B6000B49DA /* Obstacle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +59,13 @@
 		8013DD68257EBC5500110784 /* TileWorldSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TileWorldSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8013DD6C257EBC5500110784 /* TileWorldSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileWorldSwiftUITests.swift; sourceTree = "<group>"; };
 		8013DD6E257EBC5500110784 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8013DD7D257EBCDD00110784 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		8013DD82257EBE5100110784 /* GridObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridObject.swift; sourceTree = "<group>"; };
+		8013DD87257EBE7F00110784 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		8013DD8C257EBEB300110784 /* Agent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
+		8013DD91257EBF0B00110784 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		8013DD96257EBF4700110784 /* Hole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hole.swift; sourceTree = "<group>"; };
+		80ACF545257EC2B6000B49DA /* Obstacle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obstacle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +125,13 @@
 				8013DD54257EBC5400110784 /* Main.storyboard */,
 				8013DD57257EBC5400110784 /* Info.plist */,
 				8013DD58257EBC5400110784 /* TileWorldSwift.entitlements */,
+				8013DD7D257EBCDD00110784 /* Grid.swift */,
+				80ACF545257EC2B6000B49DA /* Obstacle.swift */,
+				8013DD8C257EBEB300110784 /* Agent.swift */,
+				8013DD91257EBF0B00110784 /* Tile.swift */,
+				8013DD96257EBF4700110784 /* Hole.swift */,
+				8013DD82257EBE5100110784 /* GridObject.swift */,
+				8013DD87257EBE7F00110784 /* Location.swift */,
 			);
 			path = TileWorldSwift;
 			sourceTree = "<group>";
@@ -264,9 +285,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8013DD8D257EBEB300110784 /* Agent.swift in Sources */,
 				8013DD51257EBC5200110784 /* ViewController.swift in Sources */,
+				80ACF546257EC2B6000B49DA /* Obstacle.swift in Sources */,
+				8013DD83257EBE5100110784 /* GridObject.swift in Sources */,
+				8013DD92257EBF0B00110784 /* Tile.swift in Sources */,
+				8013DD97257EBF4700110784 /* Hole.swift in Sources */,
 				8013DD4F257EBC5200110784 /* GameScene.swift in Sources */,
 				8013DD49257EBC5200110784 /* AppDelegate.swift in Sources */,
+				8013DD88257EBE7F00110784 /* Location.swift in Sources */,
+				8013DD7E257EBCDD00110784 /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
