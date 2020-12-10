@@ -8,9 +8,8 @@
 import Foundation
 
 class Grid {
-    let COLS : uint8 = 40;
-    let ROWS : uint8 = 40;
-    let SLEEP : uint32 = 200;
+    let COLS : Int = 40;
+    let ROWS : Int = 40;
     let numAgents : uint8
     let numTiles : uint8
     let numHoles : uint8
@@ -20,13 +19,14 @@ class Grid {
     var tiles : Array<Tile> = []
     var holes : Array<Hole> = []
     var obstacles : Array<Obstacle> = []
-    var objects : Dictionary<Location, GridObject> = [:]
+    var objects : [[GridObject?]]
 
-    init(numAgents : uint8, numTiles : uint8, numHoles : uint8, numObstacles : uint8) {
+    init(_ numAgents : uint8,_ numTiles : uint8,_ numHoles : uint8,_ numObstacles : uint8) {
         self.numAgents = numAgents
         self.numTiles = numTiles
         self.numHoles = numHoles
         self.numObstacles = numObstacles
+        self.objects = Array(repeating: Array(repeating: nil, count: COLS), count: ROWS)
       }
 
       func start() {
@@ -42,24 +42,32 @@ class Grid {
         for i in 0...numObstacles - 1 {
           createObstacle(i)
         }
-        while (true) {
-          for a in agents {
+      }
+    
+    func getObject(_ loc: Location) -> GridObject? {
+        return objects[loc.col][loc.row]
+    }
+    
+    func setObject(_ loc: Location,_ o: GridObject?) {
+        objects[loc.col][loc.row] = o
+    }
+    
+    func update() {
+        for a in agents {
             let orig = a.location
             a.update()
             let newLoc = a.location
-            objects[orig] = nil
-            objects[newLoc] = a
-          }
-          printGrid()
-          sleep(SLEEP)
+            setObject(orig, nil)
+            setObject(newLoc, a)
         }
-      }
+        printGrid()
+    }
 
     func createAgent(_ i : uint8) {
         let l = randomFreeLocation()
         let agent = Agent(self, i, l)
         agents.append(agent)
-        objects[l] = agent
+        setObject(l, agent)
       }
 
       func createTile(_ i : uint8) {
@@ -67,40 +75,40 @@ class Grid {
         let score =  uint8.random(in: 0...6)
         let tile = Tile(i, l, score)
         tiles.append(tile)
-        objects[l] = tile
+        setObject(l, tile)
       }
 
       func createHole(_ i : uint8) {
         let l = randomFreeLocation();
         let hole = Hole(i, l)
         holes.append(hole);
-        objects[l] = hole;
+        setObject(l, hole)
       }
 
       func createObstacle(_ i : uint8) {
         let l = randomFreeLocation();
         let obstacle : Obstacle = Obstacle(i, l)
         obstacles.append(obstacle)
-        objects[l] = obstacle
+        setObject(l, obstacle)
       }
 
       func randomFreeLocation() -> Location {
-        var col = uint8.random(in: 0..<COLS)
-        var row = uint8.random(in: 0..<ROWS)
+        var col = Int.random(in: 0..<COLS)
+        var row = Int.random(in: 0..<ROWS)
         var l : Location = Location(col, row)
         while (!isFree(l)) {
-          col = uint8.random(in: 0..<COLS)
-          row = uint8.random(in: 0..<ROWS)
+          col = Int.random(in: 0..<COLS)
+          row = Int.random(in: 0..<ROWS)
           l = Location(col, row)
         }
         return l
       }
 
     func isFree(_ l : Location) -> Bool {
-        return objects[l] == nil
-      }
+        return getObject(l) == nil
+    }
 
-    func isValidMove(location : Location, dir : Direction)  -> Bool {
+    func isValidMove(_ location : Location,_ dir : Direction)  -> Bool {
         if (dir == Direction.UP) {
           return location.row > 0 && isFree(location.nextLocation(dir))
         } else if (dir == Direction.DOWN) {
@@ -116,24 +124,24 @@ class Grid {
         for r in 0...ROWS - 1 {
             for c in 0...COLS - 1 {
                 let l = Location(c, r)
-            let o = objects[l]
-            if (o != nil) {
-              if (o is Agent) {
-                if ((o as! Agent).hasTile) {
-                  print("Å");
+                let o = getObject(l)
+                if (o != nil) {
+                  if (o is Agent) {
+                    if ((o as! Agent).hasTile) {
+                      print("Å");
+                    } else {
+                      print("A");
+                    }
+                  } else if (o is Tile) {
+                    print("T");
+                  } else if (o is Hole) {
+                    print("H");
+                  } else {
+                    print("#");
+                  }
                 } else {
-                  print("A");
+                  print(".");
                 }
-              } else if (o is Tile) {
-                print("T");
-              } else if (o is Hole) {
-                print("H");
-              } else {
-                print("#");
-              }
-            } else {
-              print(".");
-            }
           }
           print("");
         }
@@ -142,7 +150,7 @@ class Grid {
         }
       }
 
-      func getClosestTile(location : Location) -> Tile? {
+      func getClosestTile(_ location : Location) -> Tile? {
         var closest = 10000000
         var best : Tile? = nil
         for t in tiles {
@@ -155,7 +163,7 @@ class Grid {
         return best
       }
 
-    func getClosestHole(location : Location) -> Hole? {
+    func getClosestHole(_ location : Location) -> Hole? {
         var closest = 10000000;
         var best : Hole? = nil
         for h in holes {
@@ -172,7 +180,7 @@ class Grid {
         if let index = tiles.firstIndex(of: tile) {
             tiles.remove(at: index)
         }
-        objects[tile.location] = nil
+        setObject(tile.location, nil)
         createTile(tile.num)
       }
 
@@ -180,7 +188,7 @@ class Grid {
         if let index = holes.firstIndex(of: hole) {
             holes.remove(at: index)
         }
-        objects[hole.location] = nil
+        setObject(hole.location, nil)
         createHole(hole.num)
       }
     

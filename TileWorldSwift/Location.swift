@@ -15,10 +15,10 @@ enum Direction {
 }
 
 class Location : Hashable {
-    var col : uint8
-    var row : uint8
+    var col : Int
+    var row : Int
     
-    init(_ col : uint8,_ row : uint8) {
+    init(_ col : Int,_ row : Int) {
         self.col = col
         self.row = row
     }
@@ -37,6 +37,22 @@ class Location : Hashable {
             return Location(col - 1, row)
         default:
             return Location(col + 1, row)
+        }
+    }
+    
+    func getDirection(_ next: Location) -> Direction {
+        if row == next.row {
+            if (col == next.col + 1) {
+                return Direction.LEFT
+            } else {
+                return Direction.RIGHT
+            }
+        } else {
+            if (row == next.row + 1) {
+                return Direction.UP
+            } else {
+                return Direction.DOWN
+            }
         }
     }
     
