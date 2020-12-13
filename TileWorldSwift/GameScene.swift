@@ -46,12 +46,13 @@ class GameScene: SKScene {
         if (agent.hasTile) {
             let circ = SKShapeNode(circleOfRadius: CGFloat(MAG/2))
             circ.position = CGPoint(x:x, y:y)
+            circ.strokeColor = color
             addChild(circ)
             let text = SKLabelNode()
             text.text = "\(agent.tile!.score)"
             text.fontSize = 8
-            text.color = color
-            text.position = CGPoint(x:x, y:y-2)
+            text.fontColor = color
+            text.position = CGPoint(x:x, y:y-3)
             addChild(text)
         }
     }
@@ -63,7 +64,7 @@ class GameScene: SKScene {
         let text = SKLabelNode()
         text.text = "\(tile.score)"
         text.fontSize = 8
-        text.position = CGPoint(x:x, y:y-2)
+        text.position = CGPoint(x:x, y:y-3)
         addChild(text)
     }
 
@@ -109,7 +110,7 @@ class GameScene: SKScene {
         for a in grid.agents {
             let text = SKLabelNode()
             text.text = "Agent \(a.num): \(a.score)"
-            text.color = getColor(a.num)
+            text.fontColor = getColor(a.num)
             text.fontSize = 8
             text.position = CGPoint(x:x, y: y + Int(a.num) * MAG)
             addChild(text)
