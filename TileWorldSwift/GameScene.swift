@@ -15,7 +15,7 @@ class GameScene: SKScene {
     
     init(_ grid : Grid) {
         self.grid = grid
-        let size : CGSize = CGSize(width: Int(grid.COLS) * MAG, height	: Int(grid.ROWS) * MAG)
+        let size : CGSize = CGSize(width: Int(grid.COLS) * MAG + 250, height	: Int(grid.ROWS) * MAG)
         super.init(size: size)
 
     }
@@ -40,12 +40,17 @@ class GameScene: SKScene {
     func drawAgent(_ agent: Agent,_ x : Int,_ y: Int) {
         let rect = SKShapeNode.init(rectOf: CGSize.init(width: MAG, height: MAG))
         rect.position = CGPoint(x:x, y:y)
-//        rect.strokeColor = getColor(agent.num)
+        rect.strokeColor = getColor(agent.num)
         addChild(rect)
         if (agent.hasTile) {
             let circ = SKShapeNode(circleOfRadius: CGFloat(MAG/2))
             circ.position = CGPoint(x:x, y:y)
             addChild(circ)
+            let text = SKLabelNode()
+            text.text = "\(agent.tile!.score)"
+            text.fontSize = 8
+            text.position = CGPoint(x:x, y:y)
+            addChild(text)
         }
     }
     
@@ -55,7 +60,9 @@ class GameScene: SKScene {
         addChild(circ)
         let text = SKLabelNode()
         text.text = "\(tile.score)"
+        text.fontSize = 8
         text.position = CGPoint(x:x, y:y)
+        addChild(text)
     }
 
     func drawHole(_ hole: Hole,_ x : Int,_ y: Int) {
@@ -94,6 +101,16 @@ class GameScene: SKScene {
                     drawObstacle(o as! Obstacle, x, y)
                 }
             }
+        }
+        let x = grid.COLS * MAG + 50
+        let y = 20
+        for a in grid.agents {
+            let text = SKLabelNode()
+            text.text = "Agent \(a.num): \(a.score)"
+            text.color = getColor(a.num)
+            text.fontSize = 8
+            text.position = CGPoint(x:x, y: y + Int(a.num) * MAG)
+            addChild(text)
         }
     }
 }

@@ -25,7 +25,6 @@ class PathTests: XCTestCase {
         let agent = Agent(grid, 0, Location(0,0))
         let path = shortestPath(grid, agent.location, tile.location)
         XCTAssertNotNil(path)
-        XCTAssertEqual(2, path.count)
     }
 
 }
