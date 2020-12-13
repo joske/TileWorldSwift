@@ -40,7 +40,8 @@ class GameScene: SKScene {
     func drawAgent(_ agent: Agent,_ x : Int,_ y: Int) {
         let rect = SKShapeNode.init(rectOf: CGSize.init(width: MAG, height: MAG))
         rect.position = CGPoint(x:x, y:y)
-        rect.strokeColor = getColor(agent.num)
+        let color = getColor(agent.num)
+        rect.strokeColor = color
         addChild(rect)
         if (agent.hasTile) {
             let circ = SKShapeNode(circleOfRadius: CGFloat(MAG/2))
@@ -49,7 +50,8 @@ class GameScene: SKScene {
             let text = SKLabelNode()
             text.text = "\(agent.tile!.score)"
             text.fontSize = 8
-            text.position = CGPoint(x:x, y:y)
+            text.color = color
+            text.position = CGPoint(x:x, y:y-2)
             addChild(text)
         }
     }
@@ -61,7 +63,7 @@ class GameScene: SKScene {
         let text = SKLabelNode()
         text.text = "\(tile.score)"
         text.fontSize = 8
-        text.position = CGPoint(x:x, y:y)
+        text.position = CGPoint(x:x, y:y-2)
         addChild(text)
     }
 
