@@ -95,8 +95,8 @@ class GameScene: SKScene {
         removeAllChildren()
         for r in 0..<grid.ROWS {
             for c in 0..<grid.COLS {
-                let x = Int(c) * MAG
-                let y = Int(r) * MAG
+                let x = Int(c) * MAG + MAG / 2
+                let y = Int(r) * MAG + MAG / 2
                 let l = Location(c, r)
                 let o = grid.getObject(l)
                 if o is Agent {
