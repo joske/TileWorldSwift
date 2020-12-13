@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Grid {
+public class Grid {
     let COLS : Int = 40;
     let ROWS : Int = 40;
     let numAgents : uint8
@@ -29,7 +29,7 @@ class Grid {
         self.objects = Array(repeating: Array(repeating: nil, count: COLS), count: ROWS)
       }
 
-      func start() {
+      func createObjects() {
         for i in 0...numAgents - 1 {
           createAgent(i)
         }

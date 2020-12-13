@@ -7,11 +7,11 @@
 
 import Foundation
 
-class GridObject {
+public class GridObject {
     var location : Location
     var num : uint8
     
-    init(_ num : uint8,_ location : Location) {
+    public init(_ num : uint8,_ location : Location) {
         self.num = num
         self.location = location
     }
@@ -19,7 +19,7 @@ class GridObject {
 }
 
 extension GridObject : Equatable {
-    static func == (lhs:GridObject, rhs:GridObject) -> Bool {
+    public static func == (lhs:GridObject, rhs:GridObject) -> Bool {
         return lhs.location == rhs.location
     }
 }

@@ -7,18 +7,18 @@
 
 import Foundation
 
-enum Direction {
+public enum Direction {
     case UP
     case DOWN
     case LEFT
     case RIGHT
 }
 
-class Location : Hashable {
+public class Location : Hashable {
     var col : Int
     var row : Int
     
-    init(_ col : Int,_ row : Int) {
+    public init(_ col : Int,_ row : Int) {
         self.col = col
         self.row = row
     }
@@ -56,11 +56,11 @@ class Location : Hashable {
         }
     }
     
-    static func ==(lhs: Location, rhs: Location) -> Bool {
+    public static func ==(lhs: Location, rhs: Location) -> Bool {
         return lhs.col == rhs.col && lhs.row == rhs.row
     }
     
-    func hash(into hasher: inout Hasher) {
+    public func hash(into hasher: inout Hasher) {
         hasher.combine(col)
         hasher.combine(row)
     }

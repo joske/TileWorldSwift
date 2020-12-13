@@ -15,8 +15,9 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let grid = Grid(5, 5, 5, 5)
-        grid.start()
+        let grid = Grid(5, 20, 20, 20)
+        grid.createObjects()
+        
         if let scene = GameScene(grid) as GameScene? {
           // Configure the view.
           let skView = self.view as! SKView
@@ -26,6 +27,9 @@ class ViewController: NSViewController {
           skView.ignoresSiblingOrder = false
           
           skView.presentScene(scene)
+        }
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
+            grid.update()
         }
     }
 }

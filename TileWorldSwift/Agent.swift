@@ -13,7 +13,7 @@ enum State {
     case MOVE_TO_HOLE
 }
 
-class Agent : GridObject {
+public class Agent : GridObject {
     var score : UInt8 = 0
     var tile : Tile? = nil
     var hole : Hole? = nil
@@ -113,7 +113,7 @@ class Agent : GridObject {
     }
 }
 
-func shortestPath(_ grid: Grid,_ from: Location,_ to: Location) -> Array<Direction> {
+public func shortestPath(_ grid: Grid,_ from: Location,_ to: Location) -> Array<Direction> {
     var list : Array<Location> = []
     var queue : Dictionary<Int, Array<Location>> = [:]
     list.append(from)
