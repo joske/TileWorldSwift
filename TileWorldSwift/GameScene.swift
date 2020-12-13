@@ -6,7 +6,6 @@
 //
 
 import SpriteKit
-import GameplayKit
 
 class GameScene: SKScene {
     
@@ -17,7 +16,6 @@ class GameScene: SKScene {
         self.grid = grid
         let size : CGSize = CGSize(width: Int(grid.COLS) * MAG + 250, height	: Int(grid.ROWS) * MAG)
         super.init(size: size)
-
     }
     
     func getColor(_ i:uint8) -> NSColor {

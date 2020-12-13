@@ -15,7 +15,7 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let grid = Grid(6, 20, 20, 20)
+        let grid = Grid(6, 30, 30, 30)
         grid.createObjects()
         
         if let scene = GameScene(grid) as GameScene? {

@@ -8,8 +8,8 @@
 import Foundation
 
 public class Grid {
-    let COLS : Int = 40;
-    let ROWS : Int = 40;
+    let COLS : Int = 50;
+    let ROWS : Int = 50;
     let numAgents : uint8
     let numTiles : uint8
     let numHoles : uint8
