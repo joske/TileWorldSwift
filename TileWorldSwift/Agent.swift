@@ -65,8 +65,10 @@ public class Agent : GridObject {
         if path.isEmpty {
             path = shortestPath(grid, location, tile!.location)
         }
-        let dir = path.remove(at: 0)
-        nextMove(dir)
+        if !path.isEmpty {
+            let dir = path.remove(at: 0)
+            nextMove(dir)
+        }
     }
     
     func nextMove(_ dir : Direction) {
@@ -93,8 +95,10 @@ public class Agent : GridObject {
         if path.isEmpty {
             path = shortestPath(grid, location, hole!.location)
         }
-        let dir = path.remove(at: 0)
-        nextMove(dir)
+        if !path.isEmpty {
+            let dir = path.remove(at: 0)
+            nextMove(dir)
+        }
     }
     
     func pickTile() {
@@ -149,6 +153,11 @@ func generateNext(_ grid: Grid,_ to: Location,_ path: Array<Location>,_ queue: i
 }
 
 func hasLoop(_ path: Array<Location>,_ location : Location) -> Bool {
+    for l in path {
+        if l == location {
+            return true
+        }
+    }
     return false
 }
 

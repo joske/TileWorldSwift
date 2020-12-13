@@ -60,10 +60,12 @@ class GameScene: SKScene {
     func drawTile(_ tile: Tile,_ x : Int,_ y: Int) {
         let circ = SKShapeNode(circleOfRadius: CGFloat(MAG/2))
         circ.position = CGPoint(x:x, y:y)
+        circ.strokeColor = SKColor.black
         addChild(circ)
         let text = SKLabelNode()
         text.text = "\(tile.score)"
         text.fontSize = 8
+        text.fontColor = SKColor.black
         text.position = CGPoint(x:x, y:y-3)
         addChild(text)
     }
@@ -72,6 +74,7 @@ class GameScene: SKScene {
         let circ = SKShapeNode(circleOfRadius: CGFloat(MAG/2))
         circ.position = CGPoint(x:x, y:y)
         circ.fillColor = SKColor.black
+        circ.strokeColor = SKColor.black
         addChild(circ)
     }
 
@@ -79,6 +82,7 @@ class GameScene: SKScene {
         let rect = SKShapeNode.init(rectOf: CGSize.init(width: MAG, height: MAG))
         rect.position = CGPoint(x:x, y:y)
         rect.fillColor = SKColor.black
+        rect.strokeColor = SKColor.black
         addChild(rect)
     }
 
@@ -87,6 +91,7 @@ class GameScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
+        self.backgroundColor = SKColor.white
         removeAllChildren()
         for r in 0..<grid.ROWS {
             for c in 0..<grid.COLS {
