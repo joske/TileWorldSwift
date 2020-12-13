@@ -55,9 +55,9 @@ public class Grid {
     func update() {
         for a in agents {
             let orig = a.location
+            setObject(orig, nil)
             a.update()
             let newLoc = a.location
-            setObject(orig, nil)
             setObject(newLoc, a)
         }
         printGrid()

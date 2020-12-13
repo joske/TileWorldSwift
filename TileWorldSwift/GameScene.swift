@@ -25,7 +25,7 @@ class GameScene: SKScene {
         case 0:
             return SKColor.blue
         case 1:
-            return SKColor.yellow
+            return SKColor.darkGray
         case 2:
             return SKColor.green
         case 3:
@@ -52,6 +52,7 @@ class GameScene: SKScene {
             text.text = "\(agent.tile!.score)"
             text.fontSize = 8
             text.fontColor = color
+            text.fontName = "AvenirNext-Bold"
             text.position = CGPoint(x:x, y:y-3)
             addChild(text)
         }
@@ -65,6 +66,7 @@ class GameScene: SKScene {
         let text = SKLabelNode()
         text.text = "\(tile.score)"
         text.fontSize = 8
+        text.fontName = "AvenirNext-Bold"
         text.fontColor = SKColor.black
         text.position = CGPoint(x:x, y:y-3)
         addChild(text)

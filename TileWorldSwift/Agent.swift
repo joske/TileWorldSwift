@@ -67,7 +67,11 @@ public class Agent : GridObject {
         }
         if !path.isEmpty {
             let dir = path.remove(at: 0)
-            nextMove(dir)
+            if grid.isValidMove(location, dir) || location.nextLocation(dir) == tile?.location {
+                // could be an agent in our way (path is calculated upfront, but the other agents move too
+                // wait one iteration and see if we can get unstuck
+                nextMove(dir)
+            }
         }
     }
     
@@ -97,7 +101,11 @@ public class Agent : GridObject {
         }
         if !path.isEmpty {
             let dir = path.remove(at: 0)
-            nextMove(dir)
+            if grid.isValidMove(location, dir) || location.nextLocation(dir) == hole?.location {
+                // could be an agent in our way (path is calculated upfront, but the other agents move too
+                // wait one iteration and see if we can get unstuck
+                nextMove(dir)
+            }
         }
     }
     
