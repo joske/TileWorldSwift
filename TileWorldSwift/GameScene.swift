@@ -105,14 +105,14 @@ class GameScene: SKScene {
                 }
             }
         }
-        let x = grid.COLS * MAG + 50
-        let y = 20
+        let x = grid.COLS * MAG + 100
+        let y = grid.ROWS * MAG - 20
         for a in grid.agents {
             let text = SKLabelNode()
             text.text = "Agent \(a.num): \(a.score)"
             text.fontColor = getColor(a.num)
             text.fontSize = 8
-            text.position = CGPoint(x:x, y: y + Int(a.num) * MAG)
+            text.position = CGPoint(x:x, y: y - Int(a.num) * MAG)
             addChild(text)
         }
     }

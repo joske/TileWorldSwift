@@ -60,6 +60,7 @@ public class Agent : GridObject {
         if potentialTile != tile {
             // this one is now closer
             tile = potentialTile
+            path = shortestPath(grid, location, tile!.location)
         }
         if path.isEmpty {
             path = shortestPath(grid, location, tile!.location)
@@ -80,7 +81,6 @@ public class Agent : GridObject {
         }
         if grid.getObject(hole!.location) != hole {
             // hole gone
-            state = State.MOVE_TO_HOLE
             hole = grid.getClosestHole(location)
             return
         }
@@ -88,6 +88,7 @@ public class Agent : GridObject {
         if potentialHole != hole {
             // this one is now closer
             hole = potentialHole
+            path = shortestPath(grid, location, hole!.location)
         }
         if path.isEmpty {
             path = shortestPath(grid, location, hole!.location)

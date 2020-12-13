@@ -28,7 +28,7 @@ class ViewController: NSViewController {
           
           skView.presentScene(scene)
         }
-        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
+        Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { timer in
             grid.update()
         }
     }
