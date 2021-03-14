@@ -72,7 +72,7 @@ public class Grid {
 
       func createTile(_ i : uint8) {
         let l = randomFreeLocation()
-        let score =  uint8.random(in: 0...6)
+        let score =  uint8.random(in: 1...6)
         let tile = Tile(i, l, score)
         tiles.append(tile)
         setObject(l, tile)
