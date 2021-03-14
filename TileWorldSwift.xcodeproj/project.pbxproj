@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69A85B6B672B821C2C814A48 /* libPods-TileWorldSwift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 920620E7D57F2BEAA39A84D6 /* libPods-TileWorldSwift.a */; };
 		8013DD49257EBC5200110784 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8013DD48257EBC5200110784 /* AppDelegate.swift */; };
 		8013DD4D257EBC5200110784 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8013DD4C257EBC5200110784 /* Actions.sks */; };
 		8013DD4F257EBC5200110784 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8013DD4E257EBC5200110784 /* GameScene.swift */; };
@@ -21,6 +22,9 @@
 		8013DD8D257EBEB300110784 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8013DD8C257EBEB300110784 /* Agent.swift */; };
 		8013DD92257EBF0B00110784 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8013DD91257EBF0B00110784 /* Tile.swift */; };
 		8013DD97257EBF4700110784 /* Hole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8013DD96257EBF4700110784 /* Hole.swift */; };
+		801B8A1E25FEAAB4006C5BB7 /* Astar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B8A1D25FEAAB4006C5BB7 /* Astar.swift */; };
+		801B8A2B25FEAEB2006C5BB7 /* TileWorldSwift in Resources */ = {isa = PBXBuildFile; fileRef = 801B8A2A25FEAEB2006C5BB7 /* TileWorldSwift */; };
+		801B8A3325FEB8E8006C5BB7 /* AstarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B8A3225FEB8E8006C5BB7 /* AstarTest.swift */; };
 		8042CEE1258699820073695F /* PathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8042CEE0258699820073695F /* PathTests.swift */; };
 		80ACF546257EC2B6000B49DA /* Obstacle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ACF545257EC2B6000B49DA /* Obstacle.swift */; };
 /* End PBXBuildFile section */
@@ -43,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1FA37F61178503243F90D2B2 /* Pods-TileWorldSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TileWorldSwift.release.xcconfig"; path = "Target Support Files/Pods-TileWorldSwift/Pods-TileWorldSwift.release.xcconfig"; sourceTree = "<group>"; };
 		8013DD45257EBC5200110784 /* TileWorldSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TileWorldSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8013DD48257EBC5200110784 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8013DD4C257EBC5200110784 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -64,8 +69,13 @@
 		8013DD8C257EBEB300110784 /* Agent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
 		8013DD91257EBF0B00110784 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		8013DD96257EBF4700110784 /* Hole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hole.swift; sourceTree = "<group>"; };
+		801B8A1D25FEAAB4006C5BB7 /* Astar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astar.swift; sourceTree = "<group>"; };
+		801B8A2A25FEAEB2006C5BB7 /* TileWorldSwift */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TileWorldSwift; sourceTree = "<group>"; };
+		801B8A3225FEB8E8006C5BB7 /* AstarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstarTest.swift; sourceTree = "<group>"; };
 		8042CEE0258699820073695F /* PathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathTests.swift; sourceTree = "<group>"; };
 		80ACF545257EC2B6000B49DA /* Obstacle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obstacle.swift; sourceTree = "<group>"; };
+		920620E7D57F2BEAA39A84D6 /* libPods-TileWorldSwift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TileWorldSwift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF7900025D980F4515D06C16 /* Pods-TileWorldSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TileWorldSwift.debug.xcconfig"; path = "Target Support Files/Pods-TileWorldSwift/Pods-TileWorldSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69A85B6B672B821C2C814A48 /* libPods-TileWorldSwift.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +104,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0682FC0DDE6C9F27A0E6CDF2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				920620E7D57F2BEAA39A84D6 /* libPods-TileWorldSwift.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5A83B09481F51E9B0BD9FD6B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EF7900025D980F4515D06C16 /* Pods-TileWorldSwift.debug.xcconfig */,
+				1FA37F61178503243F90D2B2 /* Pods-TileWorldSwift.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8013DD3C257EBC5200110784 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +128,8 @@
 				8013DD60257EBC5500110784 /* TileWorldSwiftTests */,
 				8013DD6B257EBC5500110784 /* TileWorldSwiftUITests */,
 				8013DD46257EBC5200110784 /* Products */,
+				5A83B09481F51E9B0BD9FD6B /* Pods */,
+				0682FC0DDE6C9F27A0E6CDF2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +146,7 @@
 		8013DD47257EBC5200110784 /* TileWorldSwift */ = {
 			isa = PBXGroup;
 			children = (
+				801B8A2A25FEAEB2006C5BB7 /* TileWorldSwift */,
 				8013DD48257EBC5200110784 /* AppDelegate.swift */,
 				8013DD4C257EBC5200110784 /* Actions.sks */,
 				8013DD4E257EBC5200110784 /* GameScene.swift */,
@@ -131,6 +162,7 @@
 				8013DD96257EBF4700110784 /* Hole.swift */,
 				8013DD82257EBE5100110784 /* GridObject.swift */,
 				8013DD87257EBE7F00110784 /* Location.swift */,
+				801B8A1D25FEAAB4006C5BB7 /* Astar.swift */,
 			);
 			path = TileWorldSwift;
 			sourceTree = "<group>";
@@ -141,6 +173,7 @@
 				8013DD61257EBC5500110784 /* TileWorldSwiftTests.swift */,
 				8013DD63257EBC5500110784 /* Info.plist */,
 				8042CEE0258699820073695F /* PathTests.swift */,
+				801B8A3225FEB8E8006C5BB7 /* AstarTest.swift */,
 			);
 			path = TileWorldSwiftTests;
 			sourceTree = "<group>";
@@ -161,6 +194,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8013DD71257EBC5500110784 /* Build configuration list for PBXNativeTarget "TileWorldSwift" */;
 			buildPhases = (
+				E531A561420300A24F68E2E0 /* [CP] Check Pods Manifest.lock */,
 				8013DD41257EBC5200110784 /* Sources */,
 				8013DD42257EBC5200110784 /* Frameworks */,
 				8013DD43257EBC5200110784 /* Resources */,
@@ -258,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8013DD53257EBC5400110784 /* Assets.xcassets in Resources */,
+				801B8A2B25FEAEB2006C5BB7 /* TileWorldSwift in Resources */,
 				8013DD4D257EBC5200110784 /* Actions.sks in Resources */,
 				8013DD56257EBC5400110784 /* Main.storyboard in Resources */,
 			);
@@ -279,6 +314,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E531A561420300A24F68E2E0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TileWorldSwift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8013DD41257EBC5200110784 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -290,6 +350,7 @@
 				8013DD83257EBE5100110784 /* GridObject.swift in Sources */,
 				8013DD92257EBF0B00110784 /* Tile.swift in Sources */,
 				8013DD97257EBF4700110784 /* Hole.swift in Sources */,
+				801B8A1E25FEAAB4006C5BB7 /* Astar.swift in Sources */,
 				8013DD4F257EBC5200110784 /* GameScene.swift in Sources */,
 				8013DD49257EBC5200110784 /* AppDelegate.swift in Sources */,
 				8013DD88257EBE7F00110784 /* Location.swift in Sources */,
@@ -301,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				801B8A3325FEB8E8006C5BB7 /* AstarTest.swift in Sources */,
 				8042CEE1258699820073695F /* PathTests.swift in Sources */,
 				8013DD62257EBC5500110784 /* TileWorldSwiftTests.swift in Sources */,
 			);
@@ -374,8 +436,10 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = XD96QX9758;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -396,6 +460,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = "--deep";
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -435,8 +500,10 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = XD96QX9758;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -450,6 +517,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = "--deep";
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -458,12 +526,14 @@
 		};
 		8013DD72257EBC5500110784 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF7900025D980F4515D06C16 /* Pods-TileWorldSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TileWorldSwift/TileWorldSwift.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = XD96QX9758;
 				INFOPLIST_FILE = TileWorldSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -477,12 +547,14 @@
 		};
 		8013DD73257EBC5500110784 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FA37F61178503243F90D2B2 /* Pods-TileWorldSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TileWorldSwift/TileWorldSwift.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = XD96QX9758;
 				INFOPLIST_FILE = TileWorldSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
