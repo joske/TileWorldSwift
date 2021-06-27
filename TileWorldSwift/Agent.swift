@@ -20,7 +20,7 @@ public class Agent : GridObject {
     var hasTile : Bool = false
     var grid : Grid
     var state = State.IDLE
-    var path : Array<Direction> = []
+    var path : Array<Location> = []
     
     init(_ grid : Grid,_ num : uint8,_ location : Location) {
         self.grid = grid
@@ -66,17 +66,17 @@ public class Agent : GridObject {
             path = astar(grid, location, tile!.location)
         }
         if !path.isEmpty {
-            let dir = path.remove(at: 0)
-            if grid.isValidMove(location, dir) || location.nextLocation(dir) == tile?.location {
+            let nextLocation = path.remove(at: 0)
+            if grid.isFree(nextLocation) || nextLocation == tile?.location {
                 // could be an agent in our way (path is calculated upfront, but the other agents move too
                 // wait one iteration and see if we can get unstuck
-                nextMove(dir)
+                nextMove(nextLocation)
             }
         }
     }
     
-    func nextMove(_ dir : Direction) {
-        location = location.nextLocation(dir)
+    func nextMove(_ nextLocation : Location) {
+        location = nextLocation
     }
     
     func moveToHole() {
@@ -100,11 +100,11 @@ public class Agent : GridObject {
             path = astar(grid, location, hole!.location)
         }
         if !path.isEmpty {
-            let dir = path.remove(at: 0)
-            if grid.isValidMove(location, dir) || location.nextLocation(dir) == hole?.location {
+            let nextLocation = path.remove(at: 0)
+            if grid.isFree(nextLocation) || nextLocation == hole?.location {
                 // could be an agent in our way (path is calculated upfront, but the other agents move too
                 // wait one iteration and see if we can get unstuck
-                nextMove(dir)
+                nextMove(nextLocation)
             }
         }
     }

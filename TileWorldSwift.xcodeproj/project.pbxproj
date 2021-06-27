@@ -23,7 +23,6 @@
 		8013DD92257EBF0B00110784 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8013DD91257EBF0B00110784 /* Tile.swift */; };
 		8013DD97257EBF4700110784 /* Hole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8013DD96257EBF4700110784 /* Hole.swift */; };
 		801B8A1E25FEAAB4006C5BB7 /* Astar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B8A1D25FEAAB4006C5BB7 /* Astar.swift */; };
-		801B8A2B25FEAEB2006C5BB7 /* TileWorldSwift in Resources */ = {isa = PBXBuildFile; fileRef = 801B8A2A25FEAEB2006C5BB7 /* TileWorldSwift */; };
 		801B8A3325FEB8E8006C5BB7 /* AstarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B8A3225FEB8E8006C5BB7 /* AstarTest.swift */; };
 		8042CEE1258699820073695F /* PathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8042CEE0258699820073695F /* PathTests.swift */; };
 		80ACF546257EC2B6000B49DA /* Obstacle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ACF545257EC2B6000B49DA /* Obstacle.swift */; };
@@ -70,7 +69,6 @@
 		8013DD91257EBF0B00110784 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		8013DD96257EBF4700110784 /* Hole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hole.swift; sourceTree = "<group>"; };
 		801B8A1D25FEAAB4006C5BB7 /* Astar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astar.swift; sourceTree = "<group>"; };
-		801B8A2A25FEAEB2006C5BB7 /* TileWorldSwift */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TileWorldSwift; sourceTree = "<group>"; };
 		801B8A3225FEB8E8006C5BB7 /* AstarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstarTest.swift; sourceTree = "<group>"; };
 		8042CEE0258699820073695F /* PathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathTests.swift; sourceTree = "<group>"; };
 		80ACF545257EC2B6000B49DA /* Obstacle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obstacle.swift; sourceTree = "<group>"; };
@@ -146,7 +144,6 @@
 		8013DD47257EBC5200110784 /* TileWorldSwift */ = {
 			isa = PBXGroup;
 			children = (
-				801B8A2A25FEAEB2006C5BB7 /* TileWorldSwift */,
 				8013DD48257EBC5200110784 /* AppDelegate.swift */,
 				8013DD4C257EBC5200110784 /* Actions.sks */,
 				8013DD4E257EBC5200110784 /* GameScene.swift */,
@@ -251,7 +248,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1200;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					8013DD44257EBC5200110784 = {
 						CreatedOnToolsVersion = 12.0;
@@ -292,7 +289,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8013DD53257EBC5400110784 /* Assets.xcassets in Resources */,
-				801B8A2B25FEAEB2006C5BB7 /* TileWorldSwift in Resources */,
 				8013DD4D257EBC5200110784 /* Actions.sks in Resources */,
 				8013DD56257EBC5400110784 /* Main.storyboard in Resources */,
 			);
@@ -531,6 +527,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TileWorldSwift/TileWorldSwift.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = XD96QX9758;
@@ -552,6 +549,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TileWorldSwift/TileWorldSwift.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = XD96QX9758;

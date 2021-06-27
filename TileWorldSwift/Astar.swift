@@ -10,11 +10,11 @@ import SwiftPriorityQueue
 
 class Node : Comparable, Hashable {
     let location : Location
-    let parent : Node?
+    let path : Array<Location>
     let cost : Int
-    init(location: Location, parent: Node?, cost:Int) {
+    init(location: Location, path: Array<Location>, cost:Int) {
         self.location = location
-        self.parent = parent
+        self.path = path
         self.cost = cost
     }
 
@@ -32,15 +32,15 @@ class Node : Comparable, Hashable {
     }
 }
 
-public func astar(_ grid: Grid,_ from: Location,_ to: Location) -> Array<Direction>{
+public func astar(_ grid: Grid,_ from: Location,_ to: Location) -> Array<Location>{
     var openList = PriorityQueue<Node>(ascending: true)
-    let fromNode = Node(location: from, parent:nil, cost:0)
+    let fromNode = Node(location: from, path:[], cost:0)
     openList.push(fromNode)
     var closedList : Array<Node> = []
     while !openList.isEmpty {
         let currentNode = openList.pop()!
         if currentNode.location == to {
-            return makePathAStar(currentNode, fromNode)
+            return currentNode.path
         }
         closedList.append(currentNode)
         checkNeighbor(grid, &openList, closedList, currentNode, Direction.UP, from, to)
@@ -56,22 +56,11 @@ func checkNeighbor(_ grid: Grid,_ openList : inout PriorityQueue<Node>, _ closed
     if (nextLocation == to || grid.isValidMove(current.location, dir)) {
         let h = nextLocation.distance(to)
         let g = current.location.distance(from) + 1
-        let child = Node(location: nextLocation, parent: current, cost: g + h)
+        var path = current.path
+        path.append(nextLocation)
+        let child = Node(location: nextLocation, path: path, cost: g + h)
         if (!closedList.contains(child)) {
             openList.push(child)
         }
     }
-}
-
-func makePathAStar(_ end : Node,_ from : Node) -> Array<Direction> {
-    var directions : Array<Direction> = []
-    var current = end
-    var parent = end.parent
-    while (current.location != from.location) {
-        let d = parent!.location.getDirection(current.location)
-        directions.insert(d, at: 0)
-        current = parent!
-        parent = current.parent
-    }
-    return directions
 }
